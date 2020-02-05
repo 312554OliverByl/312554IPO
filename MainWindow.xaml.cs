@@ -1,27 +1,12 @@
-﻿/* Oliver Byl
- * February 11, 2019
- * Deck area calculator.
+﻿/* 
+ * Oliver Byl
+ * February 5, 2020
+ * Deck area calculator. 
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace _312554IPO
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -29,15 +14,16 @@ namespace _312554IPO
             InitializeComponent();
         }
 
-        private void BtnCalculate_Click(object sender, RoutedEventArgs e)
+        private void OnBtnCalculateClick(object sender, RoutedEventArgs e)
         {
-            double length, width, area;
+            // This is different from McT's example. The doubles aren't declared
+            // beforehand and then assigned, but declared within TryParse itself.
+            // SYNTACTIC SUGAR
+            double.TryParse(txtLength.Text, out double length);
+            double.TryParse(txtWidth.Text, out double width);
 
-            double.TryParse(txtLength.Text, out length);
-            double.TryParse(txtWidth.Text, out width);
-
-            area = length * width;
-
+            double area = length * width;
+            
             if (area <= 0)
                 lblOutput.Content = "Length or width is invalid.";
             else

@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_312554IPO"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="325" Width="400" FontSize="30">
     <StackPanel>
         <Label>Length</Label>
         <TextBox x:Name="txtLength"/>
         <Label>Width</Label>
         <TextBox x:Name="txtWidth"/>
-        <Button x:Name="btnCalculate" Content="Calculate Area" Click="BtnCalculate_Click"/>
+        <Button x:Name="btnCalculate" Content="Calculate Area" Click="OnBtnCalculateClick"/>
         <Label x:Name="lblOutput"/>
     </StackPanel>
 </Window>
